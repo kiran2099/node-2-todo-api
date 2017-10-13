@@ -6,6 +6,7 @@ MongoClient.connect('mongodb://localhost:27017/ToDosApp', (err, db) => {
         console.log(`Unable to connect to database server: ${err}`);
     }
     else {
+        
         console.log(`Connected to database server`);
         db.collection('ToDos').find().count().then((count) => {
             console.log(`No. of ToDos docs: ${count}`);
