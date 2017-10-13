@@ -9,7 +9,8 @@ MongoClient.connect('mongodb://localhost:27017/ToDosApp', (err, db) => {
         console.log(`Connected to database server`);
         db.collection('ToDos').insertOne({
             text: 'Something to do',
-            completed: false
+            completed: false,
+            dateOfToDo: new Date()
         }, (err, result) => {
             if (err) {
                 console.log(`Unable to add ToDos colletion: ${err}`);
