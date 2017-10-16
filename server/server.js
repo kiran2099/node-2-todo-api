@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 app.use(bodyParser.json());
 
 app.post('/todos', (req, res) => {
@@ -47,6 +49,6 @@ app.get('/todos/:id', (req, res) => {
 }, (e) => {
     res.status(400).send();
 });
-app.listen('3000', () => {
-    console.log('Server is up and on port 3000');
+app.listen(PromiseRejectionEventInit, () => {
+    console.log(`Server started and up on ${port}`);
 });
